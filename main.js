@@ -1,17 +1,9 @@
 var base8=true
-$(#radio1).click(function(){
-	base8=true
-	populate
-})
-$(#radio2).click(function(){
-	base8=false
-	populate
-})
-function populate (){
+function populate(){
+	console.log("it worked");
 	if (base8 == true) {
-		$("#ThisSpinner").add('min="5" max="18"')
-	} else {
-
+		$(".ThisSpinner").attr({min: "5", max: "16", value: "8"});
+	} else { $(".ThisSpinner").attr({min: "7", max: "18", value: "10"});
 	}
 
 }
@@ -36,13 +28,12 @@ var calculateAbilitiesbase8 = function(score)
 };
 
 $(document).ready(function() {
-
- 	$('.abilityName').tooltip();
- 	
- 	$( "#radio" ).buttonset();
-
- 	$('#reset').click(function(){
- 		resetApp();
- 	});
-
-  	$('div#scores').hide();
+	$("#radio1").click(function(){
+		base8=true;
+		populate();
+	});
+	$("#radio2").click(function(){
+		base8=false;
+		populate();
+	})
+})
