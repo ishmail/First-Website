@@ -1,5 +1,20 @@
+var base8=true
+$(#radio1).click(function(){
+	base8=true
+	populate
+})
+$(#radio2).click(function(){
+	base8=false
+	populate
+})
+function populate (){
+	if (base8 == true) {
+		$("#ThisSpinner").add('min="5" max="18"')
+	} else {
 
+	}
 
+}
 
 var calculateAbilitiesbase10 = function(score)
 {
