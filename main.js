@@ -2,7 +2,7 @@ var base8=true
 function populate(){
 	if (base8 == true) {
 		$(".ThisSpinner").attr({min: "5", max: "16", value: "8"});
-	} else { $(".ThisSpinner").attr({min: "7", max: "18", value: "10"});
+	} else { $(".ThisSpinner").attr({min: "8", max: "18", value: "10"});
 	}
 }
 function stats(prefix) {
@@ -42,11 +42,13 @@ $(document).ready(function() {
 		base8=false;
 		populate();
 	})
-	$("#strAbility").change(stats("str"));
-	$("#dexAbility").change(stats("dex"));
-	$("#conAbility").change(stats("con"));
-	$("#wisAbility").change(stats("wis"));
-	$("#intAbility").change(stats("int"));
-	$("#chaAbility").change(stats("cha"));
-	$("#points").change(function(){})
+	$("#strAbility").change(function(){stats("str")});
+	$("#dexAbility").change(function(){stats("dex")});
+	$("#conAbility").change(function(){stats("con")});
+	$("#wisAbility").change(function(){stats("wis")});
+	$("#intAbility").change(function(){stats("int")});
+	$("#chaAbility").change(function(){stats("cha")});
+	$(".ThisSpinner").change(function(){
+		$("#total").text()
+	})
 })
