@@ -42,13 +42,16 @@ var resetApp = function(){
 	}
 }
 $(document).ready(function() {
+	$('#scores').hide();
 	$("#radio1").click(function(){
 		base8=true;
 		populate();
+		$('#scores').slideDown('slow');
 	});
 	$("#radio2").click(function(){
 		base8=false;
 		populate();
+		$('#scores').slideDown('slow');
 	})
 	$("#strAbility").change(function(){stats("str")});
 	$("#dexAbility").change(function(){stats("dex")});
