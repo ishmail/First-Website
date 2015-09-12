@@ -1,8 +1,8 @@
 var base8=true
 function populate(){
 	if (base8 == true) {
-		$(".ThisSpinner").attr({min: "5", max: "16", value: "8"});
-	} else { $(".ThisSpinner").attr({min: "8", max: "18", value: "10"});
+		$(".ThisSpinner").attr({min: "5", max: "16"}).val(8);
+	} else { $(".ThisSpinner").attr({min: "8", max: "18"}).val(10);
 	}
 }
 function stats(prefix) {
@@ -13,6 +13,8 @@ function stats(prefix) {
 	}else {	var score = calculateAbilitiesbase8($("#"+prefix+"Ability").val());
 	$("#"+prefix+"Mod").text(score[0]);
 	$("#"+prefix+"Pts").text(score[1]);}
+	var total = parseInt($("#strPts").text())+parseInt($("#dexPts").text())+parseInt($("#conPts").text())+parseInt($("#wisPts").text())+parseInt($("#intPts").text())+parseInt($("#chaPts").text());
+	$("#total").text(total)
 }
 var calculateAbilitiesbase10 = function(score)
 {
@@ -32,7 +34,13 @@ var calculateAbilitiesbase8 = function(score)
 	var i = scoreArray.indexOf(stat);
 	return [modArray[i], pointArray[i]];
 };
-
+var resetApp = function(){
+	if (base8 == false){
+	$('.ThisSpinner').val(10);}
+	else{
+		$('.ThisSpinner').val(8);
+	}
+}
 $(document).ready(function() {
 	$("#radio1").click(function(){
 		base8=true;
@@ -48,7 +56,7 @@ $(document).ready(function() {
 	$("#wisAbility").change(function(){stats("wis")});
 	$("#intAbility").change(function(){stats("int")});
 	$("#chaAbility").change(function(){stats("cha")});
-	$(".ThisSpinner").change(function(){
-		$("#total").text()
-	})
+	$('#reset').click(function(){
+ 		resetApp();
+ 	});
 })

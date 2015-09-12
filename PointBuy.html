@@ -1,77 +1,89 @@
 <!doctype html>
-<html>
+<html lang='en'>
 	<head>
-		<link href='PointBuy.css' rel='stylesheet' type='text/css'>
+		<meta charset="utf-8">
+   		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="normalize.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 		<script src='main.js'></script>
 		<title>Point Buy Array</title>
 	</head>
 	<body>
-		<header>
-			<ul id='topbar'>
-				<li><a href='index.html'>Main</a></li>
-				<li><a href='pathfinder.html'>Pathfinder</a></li>
-				<li><a href='PointBuy.html'>Point Buy Array</a></li>
-				<li><a href='dnd.html'>D&amp;D</a></li>
-				<li><a href='DiceRoller.html'>Dice Roller</a></li>
-			</ul>
-		</header>
-		<div id="radio">
-			<input type="radio" id="radio1" name="radio" value="8"/><label for="radio1">Starting Score: 8</label>
-			<input type="radio" id="radio2" name="radio" value="10"/><label for="radio2">Starting Score: 10</label>
-		</div> 
-		<table>
-			<tr>
-				<th>Ability</th>
-				<th>Score</th>
-				<th>Modifier</th>
-				<th>Point Cost</th>
-			</tr>
-			<tr>
-				<td class="AbilityName">Strength</td>
-				<td><input type="number" class="ThisSpinner" id="strAbility" name="value"></td>
-				<td><span class="toChange" id="strMod">0</span></td>
-				<td><span class="toChange points" id="strPts">0</span></td>
-			</tr>
-			<tr>
-				<td class="AbilityName">Dexterity</td>
-				<td><input type="number" class="ThisSpinner" id="dexAbility" name="value"></td>
-				<td><span class="toChange" id="dexMod">0</span></td>
-				<td><span class="toChange points" id="dexPts">0</span></td>
-			</tr>
-			<tr>
-				<td class="AbilityName">Constitution</td>
-				<td><input type="number" class="ThisSpinner" id="conAbility" name="value"></td>
-				<td><span class="toChange" id="conMod">0</span></td>
-				<td><span class="toChange points" id="conPts">0</span></td>
-			</tr>
-			<tr>
-				<td class="AbilityName">Intelligence</td>
-				<td><input type="number" class="ThisSpinner" id="intAbility" name="value"></td>
-				<td><span class="toChange" id="intMod">0</span></td>
-				<td><span class="toChange points" id="intPts">0</span></td>
-			</tr>
-			<tr>
-				<td class="AbilityName">Wisdom</td>
-				<td><input type="number" class="ThisSpinner" id="wisAbility" name="value"></td>
-				<td><span class="toChange" id="wisMod">0</span></td>
-				<td><span class="toChange points" id="wisPts">0</span></td>
-			</tr>
-			<tr>
-				<td class="AbilityName">Charisma</td>
-				<td><input type="number" class="ThisSpinner" id="chaAbility" name="value"></td>
-				<td><span class="toChange" id="chaMod">0</span></td>
-				<td><span class="toChange points" id="chaPts">0</span></td>
-			</tr>
-			<tr>
-				<td class="abilityName"><button class="btn btn-danger" id="reset">Reset Scores</button></td>
-			</tr>      
-			<tr>
-				<td class="abilityName">Total</td>
-				<td></td>
-				<td></td>
-				<td id="total"></td>
-			</tr>
-		</table>
+		<div class="container">
+			<header class="page-header">
+				<ul class='nav nav-pills pull-right'>
+					<li><a href='index.html'>Main</a></li>
+					<li><a href='pathfinder.html'>Pathfinder</a></li>
+					<li class='active'><a href='PointBuy.html'>Point Buy Array</a></li>
+					<li><a href='dnd.html'>D&amp;D</a></li>
+					<li><a href='DiceRoller.html'>Dice Roller</a></li>
+				</ul>
+				<h3>Point Buy Chart</h3>
+			</header>
+			<div class="jumbotron">
+			<div id="radio">
+				<input type="radio" id="radio1" name="radio" value="8"/><label for="radio1">Starting Score: 8</label>
+				<input type="radio" id="radio2" name="radio" value="10"/><label for="radio2">Starting Score: 10</label>
+			</div> 
+			<table>
+				<tr>
+					<th>Ability</th>
+					<th>Score</th>
+					<th>Modifier</th>
+					<th>Point Cost</th>
+				</tr>
+				<tr>
+					<td class="AbilityName">Strength</td>
+					<td><input type="number" class="ThisSpinner" id="strAbility" name="value"></td>
+					<td><span class="toChange" id="strMod">0</span></td>
+					<td><span class="toChange points" id="strPts">0</span></td>
+				</tr>
+				<tr>
+					<td class="AbilityName">Dexterity</td>
+					<td><input type="number" class="ThisSpinner" id="dexAbility" name="value"></td>
+					<td><span class="toChange" id="dexMod">0</span></td>
+					<td><span class="toChange points" id="dexPts">0</span></td>
+				</tr>
+				<tr>
+					<td class="AbilityName">Constitution</td>
+					<td><input type="number" class="ThisSpinner" id="conAbility" name="value"></td>
+					<td><span class="toChange" id="conMod">0</span></td>
+					<td><span class="toChange points" id="conPts">0</span></td>
+				</tr>
+				<tr>
+					<td class="AbilityName">Intelligence</td>
+					<td><input type="number" class="ThisSpinner" id="intAbility" name="value"></td>
+					<td><span class="toChange" id="intMod">0</span></td>
+					<td><span class="toChange points" id="intPts">0</span></td>
+				</tr>
+				<tr>
+					<td class="AbilityName">Wisdom</td>
+					<td><input type="number" class="ThisSpinner" id="wisAbility" name="value"></td>
+					<td><span class="toChange" id="wisMod">0</span></td>
+					<td><span class="toChange points" id="wisPts">0</span></td>
+				</tr>
+				<tr>
+					<td class="AbilityName">Charisma</td>
+					<td><input type="number" class="ThisSpinner" id="chaAbility" name="value"></td>
+					<td><span class="toChange" id="chaMod">0</span></td>
+					<td><span class="toChange points" id="chaPts">0</span></td>
+				</tr>
+				<tr>
+					<td class="abilityName"><button class="btn btn-danger" id="reset">Reset Scores</button></td>
+				</tr>      
+				<tr>
+					<td class="abilityName">Total</td>
+					<td></td>
+					<td></td>
+					<td id="total"></td>
+				</tr>
+			</table>
+			</div>
+		</div>
 	</body>
 </html>
