@@ -4,6 +4,12 @@ function populate(){
 		$(".ThisSpinner").attr({min: "5", max: "16"}).val(8);
 	} else { $(".ThisSpinner").attr({min: "8", max: "18"}).val(10);
 	}
+	stats("str")
+	stats("dex")
+	stats("con")
+	stats("int")
+	stats("wis")
+	stats("cha")
 }
 function stats(prefix) {
 	if (base8 == false){
@@ -34,13 +40,6 @@ var calculateAbilitiesbase8 = function(score)
 	var i = scoreArray.indexOf(stat);
 	return [modArray[i], pointArray[i]];
 };
-var resetApp = function(){
-	if (base8 == false){
-	$('.ThisSpinner').val(10);}
-	else{
-		$('.ThisSpinner').val(8);
-	}
-}
 $(document).ready(function() {
 	$('#scores').hide();
 	$("#radio1").click(function(){
@@ -60,6 +59,6 @@ $(document).ready(function() {
 	$("#intAbility").change(function(){stats("int")});
 	$("#chaAbility").change(function(){stats("cha")});
 	$('#reset').click(function(){
- 		resetApp();
+ 		populate();
  	});
 })
