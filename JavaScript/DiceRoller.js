@@ -3,9 +3,10 @@ function roller (number, sides, mod){
 	var i=number
 	var randomNumber=0
 	while (i > 0) {
-		randomNumber += Math.floor(Math.random() * sides) + 1 + mod;
+		randomNumber += Math.floor(Math.random() * sides) + 1;
 		i -= 1
 	}
+	randomNumber +=mod;
 	$("#rollhistory").prepend("rolling "+number+"d"+sides+' with modifier '+mod+" results in "+randomNumber+"\n")
 }
 $('#roll4').click(function(){
